@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Custom Browser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        #browser-frame {
+            width: 90%;
+            height: 80%;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        #search-bar {
+            display: flex;
+            width: 90%;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+        }
+        input[type="button"] {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Custom Browser</h1>
+    <div id="search-bar">
+        <input type="text" id="url" placeholder="Enter URL here...">
+        <input type="button" value="Go" onclick="navigate()">
+    </div>
+    <iframe id="browser-frame"></iframe>
+
+    <script>
+        function navigate() {
+            var url = document.getElementById('url').value;
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                url = 'http://' + url;
+            }
+            document.getElementById('browser-frame').src = url;
+        }
+    </script>
+</body>
+</html>
