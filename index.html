@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Custom Browser</title>
+    <title>My Search Engine</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>My Custom Browser</h1>
+    <h1>My Search Engine</h1>
     <div id="search-bar">
-        <input type="text" id="url" placeholder="Enter URL here...">
-        <input type="button" value="Go" onclick="navigate()">
+        <input type="text" id="query" placeholder="Enter your search...">
+        <button onclick="search()">Search</button>
     </div>
-    <iframe id="browser-frame"></iframe>
+    <div id="results"></div>
     <script src="script.js"></script>
 </body>
 </html>
