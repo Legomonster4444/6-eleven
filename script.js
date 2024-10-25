@@ -1,7 +1,8 @@
-function navigate() {
-    var url = document.getElementById('url').value;
-    if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        url = 'http://' + url;
+function search() {
+    let query = document.getElementById('query').value;
+    if (query) {
+        let resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '<p>Searching for: ' + query + '</p>';
+        // Here you would add the code to make an API request and display results
     }
-    document.getElementById('browser-frame').src = url;
 }
